@@ -6,18 +6,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div className="welcome-message">
+          <p>Welcome</p>
+          <p>to</p>
+        </div>
+        <h1 className="logo">QuitPorn.app</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
       </header>
     </div>
   );
