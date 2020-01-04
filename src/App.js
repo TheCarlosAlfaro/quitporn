@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Button from './components/Button';
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
         </div>
         <h1 className="logo">QuitPorn.app</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        <Button></Button>
       </header>
     </div>
   );
