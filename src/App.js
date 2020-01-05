@@ -1,21 +1,31 @@
 import React from 'react';
 import './App.css';
-import Button from './components/Button';
+import Home from './components/Home';
+import CreateAccount from './components/CreateAccount';
+import HeatMap from './components/HeatMap';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <div className="welcome-message">
-          <p>Welcome</p>
-          <p>to</p>
+class App extends React.Component {
+ handleClick = () => {
+   console.log('Button clicked');
+
+ }
+
+  render() {
+    return (
+      <Router>
+        <div className="App">
+          <header className="App-header">
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/create-account" component={CreateAccount} />
+              <Route path="/the-big-picture" component={HeatMap} />
+            </Switch>
+          </header>
         </div>
-        <h1 className="logo">QuitPorn.app</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-        <Button></Button>
-      </header>
-    </div>
-  );
+      </Router>
+    );
+  }
 }
 
 export default App;
