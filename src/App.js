@@ -1,28 +1,23 @@
 import React from 'react';
 import './App.css';
-import Home from './components/Home';
-import CreateAccount from './components/CreateAccount';
+import Login from './components/Login';
+import Question from './components/Question';
 import HeatMap from './components/HeatMap';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 class App extends React.Component {
- handleClick = () => {
-   console.log('Button clicked');
-
- }
+  handleClick = () => {
+    console.log('Button clicked');
+  };
 
   render() {
     return (
       <Router>
-        <div className="App">
-          <header className="App-header">
-            <Switch>
-              <Route path="/" exact component={Home} />
-              <Route path="/create-account" component={CreateAccount} />
-              <Route path="/the-big-picture" component={HeatMap} />
-            </Switch>
-          </header>
-        </div>
+        <Switch>
+          <Route path="/" component={Login} />
+          <Route path="/did-you-watched" component={Question} />
+          <Route path="/the-big-picture" component={HeatMap} />
+        </Switch>
       </Router>
     );
   }

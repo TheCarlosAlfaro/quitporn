@@ -1,8 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
-import { Link } from 'react-router-dom';
 
-class Home extends React.Component {
+class Question extends React.Component {
   handleClick = () => {
     console.log('Button clicked');
   };
@@ -15,17 +14,15 @@ class Home extends React.Component {
             <p>Welcome</p>
             <p>to</p>
           </div>
-          <h1 className="logo">QuitPorn.app</h1>
+          <h1 className="logo">QUESTION</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-          <Link to="/create-account">
-            <Button variant="primary" onClick={this.handleClick}>
-              Create Account
-            </Button>
-          </Link>
+          <Button variant="primary" onClick={this.handleClick}>
+            Primary
+          </Button>
         </header>
       </div>
     );
   }
 }
 
-export default Home;
+export default Question;
