@@ -1,26 +1,24 @@
 import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Home from './components/Home';
 import Login from './components/Login';
-import Question from './components/Question';
-import HeatMap from './components/HeatMap';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import SignUp from './components/SignUp';
+import { AuthProvider } from './components/Auth';
+import PrivateRoute from './components/PrivateRoute';
 
-class App extends React.Component {
-  handleClick = () => {
-    console.log('Button clicked');
-  };
-
-  render() {
-    return (
+const App = () => {
+  return (
+    <AuthProvider>
       <Router>
-        <Switch>
-          <Route path="/" component={Login} />
-          <Route path="/did-you-watched" component={Question} />
-          <Route path="/the-big-picture" component={HeatMap} />
-        </Switch>
+        <div>
+          <PrivateRoute exact path="/" component={Home} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={SignUp} />
+        </div>
       </Router>
-    );
-  }
-}
+    </AuthProvider>
+  );
+};
 
 export default App;
