@@ -1,5 +1,6 @@
 import React, { useCallback, useContext } from 'react';
 import { withRouter, Redirect } from 'react-router';
+import { Link } from 'react-router-dom';
 import app from './base.js';
 import { AuthContext } from './Auth.js';
 
@@ -40,6 +41,9 @@ const Login = ({ history }) => {
         </label>
         <button type="submit">Log in</button>
       </form>
+      <div className="sign-up">
+        <Link to="/signup">Or create an account</Link>
+      </div>
     </div>
   );
 };
