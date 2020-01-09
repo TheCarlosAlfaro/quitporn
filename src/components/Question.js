@@ -1,9 +1,18 @@
 import React from 'react';
-import { Container, Row, Button } from 'react-bootstrap';
+import { Container, Button } from 'react-bootstrap';
 
 class Question extends React.Component {
-  handleClick = () => {
-    console.log('Button clicked');
+  handleClick = e => {
+    e.preventDefault();
+    const answer = e.target.value;
+    let didWatched = null;
+    if (answer === 'true') {
+      didWatched = true;
+    } else {
+      didWatched = false;
+    }
+
+    this.props.recordsAnswer(didWatched);
   };
 
   render() {
@@ -11,11 +20,25 @@ class Question extends React.Component {
       <Container>
         <h1>Did you watched today?</h1>
 
-        <Button className="my-5" variant="danger" size="lg" block>
+        <Button
+          onClick={this.handleClick}
+          value="true"
+          className="my-5"
+          variant="danger"
+          size="lg"
+          block
+        >
           YES
         </Button>
 
-        <Button className="my-5" variant="success" size="lg" block>
+        <Button
+          onClick={this.handleClick}
+          value="false"
+          className="my-5"
+          variant="success"
+          size="lg"
+          block
+        >
           NO
         </Button>
       </Container>
