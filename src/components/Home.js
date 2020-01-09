@@ -2,6 +2,7 @@ import React from 'react';
 import app from './base';
 // import { Link } from 'react-router-dom';
 import Question from './Question';
+import HeatMap from './HeatMap';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
 class Home extends React.Component {
@@ -19,25 +20,22 @@ class Home extends React.Component {
   };
 
   render() {
-    return (
-      <Container>
-        <Row className="justify-content-md-center my-5">
-          <Question recordsAnswer={this.recordsAnswer} />
-        </Row>
-
-        {/* <Row className="justify-content-center my-5">
-        <div className="sign-up">
-          <Link to="/heatmap">Check out your progress!</Link>
-        </div>
-      </Row> */}
-
-        <Row>
-          <Col>
-            <Button onClick={() => app.auth().signOut()}>Sign out</Button>
-          </Col>
-        </Row>
-      </Container>
-    );
+    if (this.state.answers.didWatched !== null) {
+      return <HeatMap />;
+    } else {
+      return (
+        <Container>
+          <Row className="justify-content-md-center my-5">
+            <Question recordsAnswer={this.recordsAnswer} />
+          </Row>
+          <Row>
+            <Col>
+              <Button onClick={() => app.auth().signOut()}>Sign out</Button>
+            </Col>
+          </Row>
+        </Container>
+      );
+    }
   }
 }
 
