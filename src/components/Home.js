@@ -1,12 +1,20 @@
 import React from 'react';
 import app from './base';
+import Question from './Question';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 
 const Home = () => {
   return (
-    <>
-      <h1>Did You Watched Porn Today?</h1>
-      <button onClick={() => app.auth().signOut()}>Sign out</button>
-    </>
+    <Container>
+      <Row className="justify-content-md-center my-5">
+        <Question />
+      </Row>
+      <Row>
+        <Col>
+          <Button onClick={() => app.auth().signOut()}>Sign out</Button>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

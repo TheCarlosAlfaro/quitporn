@@ -1,24 +1,2 @@
-.App {
-  text-align: center;
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(5px + 2vmin);
-  color: white;
-}
 
-.welcome-message {
-  line-height: 0.5;
-}
-
-.logo {
-  font-size: 6rem;
-  margin-top: 1rem;
-  margin-bottom: 0;
-}
