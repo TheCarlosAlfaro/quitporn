@@ -1,5 +1,6 @@
 import React from 'react';
 import * as d3 from 'd3';
+import { Container, Row } from 'react-bootstrap';
 
 class BarChart extends React.Component {
   componentDidMount() {
@@ -9,7 +10,7 @@ class BarChart extends React.Component {
   drawChart() {
     const data = this.props.data;
     const svg = d3
-      .select('body')
+      .select(this.refs.myVisDiv)
       .append('svg')
       .attr('width', this.props.width)
       .attr('height', this.props.height);
@@ -40,7 +41,13 @@ class BarChart extends React.Component {
   }
 
   render() {
-    return <div id={'#' + this.props.id}></div>;
+    return (
+      <Container>
+        <Row className="justify-content-md-center my-5">
+          <div ref="myVisDiv"></div>
+        </Row>
+      </Container>
+    );
   }
 }
 

@@ -10,11 +10,14 @@ class HeatMap extends React.Component {
         <Row className="my-5">
           <h1>Coming soon...</h1>
         </Row>
+
         <BarChart
           data={this.props.data}
           width={this.props.width}
           height={this.props.height}
+          id={this.props.id}
         />
+
         <Row>
           <Col>
             <Button onClick={() => app.auth().signOut()}>Sign out</Button>

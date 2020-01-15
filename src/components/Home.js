@@ -11,9 +11,9 @@ class Home extends React.Component {
       didWatched: null
     },
     data: [12, 5, 6, 6, 9, 10],
-    width: 700,
-    height: 500,
-    id: 'root'
+    width: 300,
+    height: 300,
+    id: 'heat-map'
   };
 
   recordsAnswer = fromQuestion => {
@@ -30,6 +30,7 @@ class Home extends React.Component {
           data={this.state.data}
           width={this.state.width}
           height={this.state.height}
+          id={this.state.id}
         />
       );
     } else {
