@@ -9,7 +9,11 @@ class Home extends React.Component {
   state = {
     answers: {
       didWatched: null
-    }
+    },
+    data: [12, 5, 6, 6, 9, 10],
+    width: 700,
+    height: 500,
+    id: 'root'
   };
 
   recordsAnswer = fromQuestion => {
@@ -21,7 +25,13 @@ class Home extends React.Component {
 
   render() {
     if (this.state.answers.didWatched !== null) {
-      return <HeatMap />;
+      return (
+        <HeatMap
+          data={this.state.data}
+          width={this.state.width}
+          height={this.state.height}
+        />
+      );
     } else {
       return (
         <Container>

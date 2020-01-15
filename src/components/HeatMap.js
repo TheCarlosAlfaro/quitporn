@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import app from './base';
+import BarChart from './BarChart';
 
 class HeatMap extends React.Component {
   render() {
@@ -9,6 +10,11 @@ class HeatMap extends React.Component {
         <Row className="my-5">
           <h1>Coming soon...</h1>
         </Row>
+        <BarChart
+          data={this.props.data}
+          width={this.props.width}
+          height={this.props.height}
+        />
         <Row>
           <Col>
             <Button onClick={() => app.auth().signOut()}>Sign out</Button>
