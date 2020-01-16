@@ -10,10 +10,54 @@ class Home extends React.Component {
     answers: {
       didWatched: null
     },
-    data: [12, 5, 6, 6, 9, 10],
-    width: 300,
-    height: 300,
-    id: 'heat-map'
+    // data: [12, 5, 6, 6, 9, 10],
+    data: [
+      {
+        month: 'Jan',
+        day: 1,
+        status: true
+      },
+      {
+        month: 'Jan',
+        day: 2,
+        status: false
+      },
+      {
+        month: 'Jan',
+        day: 3,
+        status: false
+      },
+      {
+        month: 'Jan',
+        day: 4,
+        status: true
+      },
+      {
+        month: 'Jan',
+        day: 5,
+        status: false
+      },
+      {
+        month: 'Jan',
+        day: 6,
+        status: true
+      },
+      {
+        month: 'Jan',
+        day: 7,
+        status: true
+      },
+      {
+        month: 'Jan',
+        day: 8,
+        status: false
+      },
+      {
+        month: 'Jan',
+        day: 9,
+        status: true
+      }
+    ]
   };
 
   recordsAnswer = fromQuestion => {
@@ -25,14 +69,7 @@ class Home extends React.Component {
 
   render() {
     if (this.state.answers.didWatched !== null) {
-      return (
-        <HeatMap
-          data={this.state.data}
-          width={this.state.width}
-          height={this.state.height}
-          id={this.state.id}
-        />
-      );
+      return <HeatMap data={this.state.data} />;
     } else {
       return (
         <Container>

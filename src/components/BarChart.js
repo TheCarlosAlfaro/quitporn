@@ -1,6 +1,6 @@
 import React from 'react';
 import * as d3 from 'd3';
-import { Container, Row } from 'react-bootstrap';
+// import { Container, Row } from 'react-bootstrap';
 
 class BarChart extends React.Component {
   componentDidMount() {
@@ -41,13 +41,7 @@ class BarChart extends React.Component {
   }
 
   render() {
-    return (
-      <Container>
-        <Row className="justify-content-md-center my-5">
-          <div ref="myVisDiv"></div>
-        </Row>
-      </Container>
-    );
+    return <div ref="myVisDiv"></div>;
   }
 }
 
