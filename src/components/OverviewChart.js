@@ -9,14 +9,23 @@ class OverviewChart extends React.Component {
 
   drawChart(data) {
     console.log(data[0].month);
-    const canvas = d3
-      .select(this.refs.my_dataviz)
+    const canvas = d3.select(this.refs.my_dataviz);
+    canvas
       .selectAll('h2')
       .data(data)
       .enter()
       .append('h2')
       .text(d => {
         return `${d.month} ${d.day} ${d.status}`;
+      })
+      .style('color', d => {
+        if (d.status === true) {
+          return 'red';
+        } else if (d.status === false) {
+          return 'green';
+        } else {
+          return 'gray';
+        }
       });
   }
 

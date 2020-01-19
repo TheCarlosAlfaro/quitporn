@@ -30,7 +30,7 @@ class Home extends React.Component {
       {
         month: 'Jan',
         day: 4,
-        status: true
+        status: null
       },
       {
         month: 'Jan',
@@ -50,7 +50,7 @@ class Home extends React.Component {
       {
         month: 'Jan',
         day: 8,
-        status: false
+        status: null
       },
       {
         month: 'Jan',
