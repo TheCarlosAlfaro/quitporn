@@ -33,9 +33,13 @@ class OverviewChart extends React.Component {
       .attr('x', (d, i) => {
         return i * 30;
       })
-      .attr('y', 0)
+      .attr('y', (d, i) => {
+        return h - d.day * 3;
+      })
       .attr('width', 25)
-      .attr('height', 25);
+      .attr('height', (d, i) => {
+        return d.day * 3;
+      });
 
     // canvas
     //   .selectAll('h2')
