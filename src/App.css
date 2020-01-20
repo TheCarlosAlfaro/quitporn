@@ -1,2 +1,11 @@
+.did-watched {
+  background-color: red;
+}
 
+.did-not-watched {
+  background-color: green;
+}
 
+.did-not-answer {
+  background-color: gray;
+}

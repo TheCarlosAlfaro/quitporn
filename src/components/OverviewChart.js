@@ -7,18 +7,21 @@ class OverviewChart extends React.Component {
     this.drawChart(data);
   }
 
-  drawChart(data) {
-    console.log(data[0].month);
-    const canvas = d3.select(this.refs.my_dataviz);
-    canvas
-      .selectAll('h2')
-      .data(data)
+  drawChart(dataset) {
+    const w = 500;
+    const h = 100;
+    const svg = d3
+      .select(this.refs.my_dataviz)
+      .append('svg')
+      .attr('width', w)
+      .attr('height', h);
+
+    svg
+      .selectAll('rect')
+      .data(dataset)
       .enter()
-      .append('h2')
-      .text(d => {
-        return `${d.month} ${d.day} ${d.status}`;
-      })
-      .style('color', d => {
+      .append('rect')
+      .style('fill', d => {
         if (d.status === true) {
           return 'red';
         } else if (d.status === false) {
@@ -26,7 +29,40 @@ class OverviewChart extends React.Component {
         } else {
           return 'gray';
         }
-      });
+      })
+      .attr('x', (d, i) => {
+        return i * 30;
+      })
+      .attr('y', 0)
+      .attr('width', 25)
+      .attr('height', 25);
+
+    // canvas
+    //   .selectAll('h2')
+    //   .data(data)
+    //   .enter()
+    //   .append('h2')
+    //   .text(d => {
+    //     return `${d.month} ${d.day} ${d.status}`;
+    //   })
+    //   .style('color', d => {
+    //     if (d.status === true) {
+    //       return 'red';
+    //     } else if (d.status === false) {
+    //       return 'green';
+    //     } else {
+    //       return 'gray';
+    //     }
+    //   })
+    //   .attr('class', d => {
+    //     if (d.status === true) {
+    //       return 'did-watched';
+    //     } else if (d.status === false) {
+    //       return 'did-not-watched';
+    //     } else {
+    //       return 'did-not-answer';
+    //     }
+    //   });
   }
 
   render() {
