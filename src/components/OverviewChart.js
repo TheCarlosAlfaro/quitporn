@@ -21,7 +21,7 @@ class OverviewChart extends React.Component {
       .data(dataset)
       .enter()
       .append('rect')
-      .style('fill', d => {
+      .attr('fill', d => {
         if (d.status === true) {
           return 'red';
         } else if (d.status === false) {
@@ -40,33 +40,6 @@ class OverviewChart extends React.Component {
       .attr('height', (d, i) => {
         return d.day * 3;
       });
-
-    // canvas
-    //   .selectAll('h2')
-    //   .data(data)
-    //   .enter()
-    //   .append('h2')
-    //   .text(d => {
-    //     return `${d.month} ${d.day} ${d.status}`;
-    //   })
-    //   .style('color', d => {
-    //     if (d.status === true) {
-    //       return 'red';
-    //     } else if (d.status === false) {
-    //       return 'green';
-    //     } else {
-    //       return 'gray';
-    //     }
-    //   })
-    //   .attr('class', d => {
-    //     if (d.status === true) {
-    //       return 'did-watched';
-    //     } else if (d.status === false) {
-    //       return 'did-not-watched';
-    //     } else {
-    //       return 'did-not-answer';
-    //     }
-    //   });
   }
 
   render() {
