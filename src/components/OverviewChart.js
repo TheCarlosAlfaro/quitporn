@@ -39,7 +39,22 @@ class OverviewChart extends React.Component {
       .attr('width', 25)
       .attr('height', (d, i) => {
         return d.day * 3;
-      });
+      })
+      .attr('class', 'bar')
+      .append('title')
+      .text(d => d.month);
+    svg
+      .selectAll('text')
+      .data(dataset)
+      .enter()
+      .append('text')
+      .text(d => d.day)
+      .attr('x', (d, i) => i * 30)
+      .attr('y', (d, i) => {
+        return h - d.day * 4;
+      })
+      .attr('fill', '#4e4e4e')
+      .style('font-size', '1.5rem');
   }
 
   render() {

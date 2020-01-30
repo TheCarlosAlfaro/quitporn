@@ -9,3 +9,7 @@
 .did-not-answer {
   background-color: gray;
 }
+
+.bar:hover {
+  fill: blue;
+}

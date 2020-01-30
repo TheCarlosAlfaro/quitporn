@@ -64,7 +64,7 @@ class Home extends React.Component {
     const answers = { ...this.state.answers };
     answers.didWatched = fromQuestion;
     this.setState({ answers });
-    console.log(this.state);
+    // console.log(this.state);
   };
 
   render() {
